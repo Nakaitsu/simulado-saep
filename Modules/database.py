@@ -1,25 +1,10 @@
 from shutil import register_unpack_format
 import mysql.connector
 
-# def startup():
-#   conn = mysql.connector.connect(
-#     host = 'localhost',
-#     user = 'root'
-#   )
-
-#   with open('database/script.sql') as comando:
-#     query = comando.read()
-
-#   cursor = conn.cursor()
-#   cursor.execute(query)
-#   conn.close()
-
 def getConnection():
   return mysql.connector.connect(
     host = 'localhost',
     user = 'root',
-    passwd = '235711',
-    auth_plugin = 'mysql_native_password',
     database = 'simulado'
   )
 

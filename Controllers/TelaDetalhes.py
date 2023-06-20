@@ -20,11 +20,6 @@ class TelaDetalhes(QMainWindow):
     self.btnVender.clicked.connect(self.vender)
 
     self.atualizarVeiculos()
-    # self.veiculos = db.getVeiculosPorArea(self.area)
-
-    # self.cbbVeiculos.addItem('[ selecionar ]', '')
-    # for veiculo in self.veiculos:
-    #   self.cbbVeiculos.addItem(veiculo['modelo'], veiculo['id'])
 
     self.cbbVeiculos.currentIndexChanged.connect(self.cbbVeiculos_indexChanged)
 
