@@ -21,6 +21,11 @@ class TelaInicial(QMainWindow):
     self.botoes.append(self.btnArea10)
     self.botoes.append(self.btnArea11)
 
+    self.atualizarAreas()
+
+    self.show()
+
+  def atualizarAreas(self):
     listaAreas = db.getAreas()
 
     for botao in self.botoes:
@@ -32,8 +37,6 @@ class TelaInicial(QMainWindow):
         botao.setStyleSheet('background-color: #0000FF; color: #FFFFFF')
       else:
         botao.clicked.connect(lambda: QMessageBox.warning(self, 'Indisponível', 'A área selecionada está vazia!'))
-
-    self.show()
 
   def gerarAreaClickListener(self, idArea):
     def Listener():
@@ -47,4 +50,5 @@ class TelaInicial(QMainWindow):
     tela.closed.connect(self.childClosed)
 
   def childClosed(self):
+    self.atualizarAreas()
     self.show()
